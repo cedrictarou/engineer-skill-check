@@ -22,6 +22,11 @@
     </div>
 
     <div class="form_group">
+      <%= f.label :e_mail %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="form_group">
       <%= f.label :account %>
       <%= f.text_field :account %>
     </div>
@@ -40,7 +45,17 @@
       <%= f.label :office_id %>
       <%= f.collection_select(:office_id, @offices, :id, :name)%>
     </div>
+    <div class="form_group">
+      <%= f.label :date_of_joining %>
+      <%= f.datetime_field :date_of_joining%>
+    </div>
 
+    <div class="form_group">
+      <%= f.label :employee_info_manage_auth, class: 'checkbox_label' %>
+      <%= f.check_box :employee_info_manage_auth, :as => :boolean %>
+    </div>
+
+    
     <div class="form_group">
       <%= f.label :employee_info_manage_auth, class: 'checkbox_label' %>
       <%= f.check_box :employee_info_manage_auth, :as => :boolean %>
