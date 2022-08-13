@@ -20,6 +20,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# コンソール出力結果を見やすくする
+gem 'hirb', '~> 0.7.3'
+# hirbの文字列を補正する
+gem 'hirb-unicode-steakknife', '~> 0.0.9'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
