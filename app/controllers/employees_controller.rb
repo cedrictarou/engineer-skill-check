@@ -48,8 +48,8 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-    # emailとdate of joiningを追加
-    params.require(:employee).permit(:number, :last_name, :first_name, :account, :email, :password, :date_of_joining,:department_id, :office_id, :employee_info_manage_auth)
+    # emailとdate of joiningとnews posting authを追加
+    params.require(:employee).permit(:number, :last_name, :first_name, :account, :email, :password, :date_of_joining,:department_id, :office_id, :employee_info_manage_auth, :news_posting_auth)
   end
 
   def set_employee
