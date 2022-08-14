@@ -75,6 +75,7 @@ GEM
     hirb-unicode-steakknife (0.0.9)
       hirb (~> 0.5)
       unicode-display_width (~> 1.1)
+    htmlbeautifier (1.4.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -93,6 +94,8 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     puma (5.5.2)
@@ -177,6 +180,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -184,6 +188,7 @@ DEPENDENCIES
   byebug
   hirb (~> 0.7.3)
   hirb-unicode-steakknife (~> 0.0.9)
+  htmlbeautifier
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
