@@ -9,6 +9,9 @@ import 'channels';
 
 // link_toでdeleteアクションが使えなくなるのでコメントアウト
 // import 'jquery'
+// bootstrap5用のコード
+import 'bootstrap';
+import '../stylesheets/application.scss';
 
 Rails.start();
 ActiveStorage.start();
