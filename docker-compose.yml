@@ -10,6 +10,7 @@ services:
     ports:
       - "3035:3035"
   web:
+    
     build: .
     command: "bundle exec rails s -b '0.0.0.0' -p 3000"
     volumes:
@@ -18,3 +19,5 @@ services:
       - "3000:3000"
     environment:
       WEBPACKER_DEV_SERVER_HOST: webpacker
+    stdin_open: true
+    tty: true

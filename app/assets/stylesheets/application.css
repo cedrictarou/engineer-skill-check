@@ -25,21 +25,21 @@ a {
 }
 
 table {
-  border-collapse:  collapse;
+  border-collapse: collapse;
 }
 
 tr {
   border: solid 1px;
 }
 
-.container {
+/* .container {
   height: 100%;
   padding: 0 20px 0 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
-}
+} */
 
 .row-center {
   text-align: center;
@@ -89,7 +89,8 @@ tr {
   border: 1px solid;
 }
 
-.left_menu, .right_menu {
+.left_menu,
+.right_menu {
   display: inline-block;
 }
 
@@ -106,4 +107,3 @@ tr {
   background: none;
   border: 0;
 }
-

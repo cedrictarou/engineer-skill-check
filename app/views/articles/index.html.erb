@@ -1,0 +1,26 @@
+<%# 記事一覧ページ %>
+<% if flash.notice.present? %>
+	<p><%= flash.notice %></p>
+<% end %>
+<div class="row">
+	<h1>記事一覧ページ</h1>
+	<% if current_user.employee_info_manage_auth %>
+		<p class="new_article"><%= link_to '新規投稿', new_employee_article_path, class: 'btn' %></p>
+	<% end %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">タイトル</th>
+				<th scope="col">アクション</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @articles.each do |article| %>
+				<tr>
+					<td><%= article.title%></td>
+					<td>削除</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# test用
+Article.create(title:'test', content:'test', employee_id:1)
+
 DEPARTMENT_NAME = %w[総務部 技術部 営業部]
 OFFICE_NAME = %w[東京 仙台 大阪 福岡 大分]
 

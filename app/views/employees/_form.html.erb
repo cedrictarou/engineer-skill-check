@@ -1,54 +1,54 @@
 <div class="employee_form">
-  <% if employee.errors.present? %>
-    <ul>
-      <% employee.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  <%= form_with model: employee, local: true do |f| %>
-    <div class="form_group">
-      <%= f.label :number, class:'form-label'%>
-      <%= f.text_field :number, class:'form-control' %>
-    </div>
-    <div class="form_group">
-      <%= f.label :last_name, class:'form-label'%>
-      <%= f.text_field :last_name, class:'form-control' %>
-      <%= f.label :first_name, class:'form-label'%>
-      <%= f.text_field :first_name, class:'form-control' %>
-    </div>
-    <div class="form_group">
-      <%= f.label :e_mail, class:'form-label'%>
-      <%= f.text_field :email, class:'form-control'%>
-    </div>
-    <div class="form_group">
-      <%= f.label :account, class:'form-label'%>
-      <%= f.text_field :account, class:'form-control' %>
-    </div>
-    <div class="form_group">
-      <%= f.label :password, class:'form-label'%>
-      <%= f.password_field :password, class:'form-control' %>
-    </div>
-    <div class="form_group">
-      <%= f.label :department_id, class:'form-label'%>
-      <%= f.collection_select(:department_id, @departments, :id, :name)%>
-    </div>
-    <div class="form_group">
-      <%= f.label :office_id,class:'form-label' %>
-      <%= f.collection_select(:office_id, @offices, :id, :name) %>
-    </div>
-    <div class="form_group">
-      <%= f.label :date_of_joining ,class:'form-label' %>
-      <%= f.date_field :date_of_joining , class:'form-control' %>
-    </div>
-    <div class="form_group">
-      <%= f.label :employee_info_manage_auth, class: 'checkbox_label' %>
-      <%= f.check_box :employee_info_manage_auth, :as => :boolean %>
-    </div>
-    <div class="form_group">
-      <%= f.label :news_posting_auth, class: 'checkbox_label' %>
-      <%= f.check_box :news_posting_auth, :as => :boolean %>
-    </div>
-    <%= f.submit '保存', class:'btn'%>
-  <% end %>
+	<% if employee.errors.present? %>
+		<ul>
+			<% employee.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= form_with model: employee, local: true do |f| %>
+		<div class="form_group">
+			<%= f.label :number, class:'form-label'%>
+			<%= f.text_field :number, class:'form-control' %>
+		</div>
+		<div class="form_group">
+			<%= f.label :last_name, class:'form-label'%>
+			<%= f.text_field :last_name, class:'form-control' %>
+			<%= f.label :first_name, class:'form-label'%>
+			<%= f.text_field :first_name, class:'form-control' %>
+		</div>
+		<div class="form_group">
+			<%= f.label :e_mail, class:'form-label'%>
+			<%= f.text_field :email, class:'form-control'%>
+		</div>
+		<div class="form_group">
+			<%= f.label :account, class:'form-label'%>
+			<%= f.text_field :account, class:'form-control' %>
+		</div>
+		<div class="form_group">
+			<%= f.label :password, class:'form-label'%>
+			<%= f.password_field :password, class:'form-control' %>
+		</div>
+		<div class="form_group">
+			<%= f.label :department_id, class:'form-label'%>
+			<%= f.collection_select(:department_id, @departments, :id, :name)%>
+		</div>
+		<div class="form_group">
+			<%= f.label :office_id,class:'form-label' %>
+			<%= f.collection_select(:office_id, @offices, :id, :name) %>
+		</div>
+		<div class="form_group">
+			<%= f.label :date_of_joining ,class:'form-label' %>
+			<%= f.date_field :date_of_joining , class:'form-control' %>
+		</div>
+		<div class="form_group">
+			<%= f.label :employee_info_manage_auth, class: 'checkbox_label' %>
+			<%= f.check_box :employee_info_manage_auth, :as => :boolean %>
+		</div>
+		<div class="form_group">
+			<%= f.label :news_posting_auth, class: 'checkbox_label' %>
+			<%= f.check_box :news_posting_auth, :as => :boolean %>
+		</div>
+		<%= f.submit '保存', class:'btn' %>
+	<% end %>
 </div>
