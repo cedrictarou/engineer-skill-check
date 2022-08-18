@@ -1,0 +1,13 @@
+.profile_space
+  p.employee_index
+    = link_to '一覧に戻る', employees_path, class: 'btn'
+  = render partial: 'employee_info', locals: { employee: @employee }
+  .row
+    span.label
+      | プロフィール
+    span.profile_value
+      - if current_user == @employee
+        p
+          = link_to 'プロフィールを作成', new_employee_profile_path(@employee)
+      - else
+        |  （プロフィールがありません） 

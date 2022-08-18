@@ -1,10 +1,9 @@
 class ArticlesController < ApplicationController
-  before_action :set_employee, only: %i[edit show update destroy]
+  before_action :set_employee, only: %i[new edit show update destroy]
 
   def index
     # @employees = Employee.active.order("#{sort_column} #{sort_direction}")
     @articles = Article.includes(:employee).active.order('created_at DESC')
-    @employee = Employee.find(params[:employee_id])
   end
 
   def show
@@ -13,7 +12,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @employee = Employee.find(params[:employee_id])
   end
 
   def create

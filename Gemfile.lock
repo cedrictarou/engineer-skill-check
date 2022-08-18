@@ -75,6 +75,9 @@ GEM
     hirb-unicode-steakknife (0.0.9)
       hirb (~> 0.5)
       unicode-display_width (~> 1.1)
+    hpricot (0.8.6)
+    html2slim (0.2.0)
+      hpricot
     htmlbeautifier (1.4.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
@@ -149,6 +152,13 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    slim (4.1.0)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.5.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -158,6 +168,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
     tzinfo (2.0.4)
@@ -188,6 +199,7 @@ DEPENDENCIES
   byebug
   hirb (~> 0.7.3)
   hirb-unicode-steakknife (~> 0.0.9)
+  html2slim
   htmlbeautifier
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -195,6 +207,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
   sass-rails (>= 6)
+  slim-rails
   spring
   sqlite3 (~> 1.4)
   tzinfo-data

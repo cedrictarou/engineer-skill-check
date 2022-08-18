@@ -1,0 +1,16 @@
+.session
+  = form_for(:employees, url: login_path) do |f|
+    .form-group
+      = f.label 'アカウント', class: 'form-label'
+      = f.text_field :account, class: 'form-control'
+    .form-group
+      = f.label 'パスワード', class: 'form-label'
+      = f.password_field :password, class: 'form-control'
+    - if flash[:alert]
+      .form-group
+
+      p
+        = flash[:alert]
+    .row-center
+      p
+        = f.submit 'ログイン', class: 'form-submit'

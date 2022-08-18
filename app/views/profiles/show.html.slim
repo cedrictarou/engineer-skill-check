@@ -1,0 +1,9 @@
+.profile_space
+  p.employee_index
+    = link_to '一覧に戻る', employees_path, class: 'btn'
+  = render partial: 'employee_info', locals: { employee: @employee }
+  .row
+    span.label
+      | プロフィール
+    span.profile_value
+      = @profile.profile

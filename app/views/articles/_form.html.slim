@@ -1,0 +1,14 @@
+- if article.errors.present?
+  ul.list-group
+    - article.errors.full_messages.each do |message|
+      li.list-group-item.list-group-item-danger
+        = message
+- model = article.new_record? ? [employee, article] : article
+= form_with model: model, local: true do |f|
+  .mb-3.form-group
+    = f.label :title, class:'form-label'
+    = f.text_field :title, placeholder: "タイトルを入力してください。",class:'form-control'
+  .mb-3.form-group
+    = f.label :content, class:'form-label'
+    = f.text_area :content, placeholder: "内容を入力してください。", class:'form-control'
+  = f.submit nil, class:'btn btn-primary'

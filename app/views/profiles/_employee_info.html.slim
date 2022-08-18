@@ -1,0 +1,15 @@
+.row
+  span.label
+    | 社員番号
+  span
+    = employee.number
+.row
+  span.label
+    | 氏名
+  span
+    = "#{employee.last_name} #{employee.first_name}"
+.row
+  span.label
+    | 部署
+  span
+    = employee.department.name

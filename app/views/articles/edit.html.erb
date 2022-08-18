@@ -1,5 +1,0 @@
-<h1>記事編集ページ</h1>
-<div class="nav justify-content-end">
-	<%= link_to '一覧', employee_articles_path(@current_user.id) , class: 'btn btn-primary' %>
-</div>
-<%= render partial: "form", locals: { article: @article} %>

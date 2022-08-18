@@ -1,0 +1,17 @@
+= javascript_pack_tag "header.js"
+#menu
+  ul
+    li
+      = link_to 'お知らせ', employee_articles_path(@current_user.id)
+    li
+      = link_to '社員紹介', employees_path
+  ul
+    li
+      button#dropdown__btn.dropdown__btn
+        = "#{@current_user.last_name} #{@current_user.first_name}"
+#dropdown_menu
+  .right_menu
+    .dropdown_items
+      ul
+        li
+          = link_to 'ログアウト', logout_path, method: :delete
