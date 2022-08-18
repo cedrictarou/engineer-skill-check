@@ -12,7 +12,7 @@ class Employee < ApplicationRecord
   validates :password, presence: true
   validates :date_of_joining, presence: true
 
-  scope :active, -> {
+  scope :active, lambda {
     where(deleted_at: nil)
   }
 end

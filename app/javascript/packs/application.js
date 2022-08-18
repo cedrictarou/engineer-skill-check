@@ -6,12 +6,11 @@
 import Rails from '@rails/ujs';
 import * as ActiveStorage from '@rails/activestorage';
 import 'channels';
+import 'jquery';
 
 // bootstrap5用のコード
 import 'bootstrap';
 import '../stylesheets/application.scss';
-// link_toでdeleteアクションが使えなくなるのでコメントアウト
-import 'jquery';
 
 Rails.start();
 ActiveStorage.start();

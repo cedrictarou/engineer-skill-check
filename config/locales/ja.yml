@@ -3,6 +3,12 @@ ja:
       formats:
         default: "%Y/%m/%d %H:%M:%S"
         short: "%y/%m/%d/"
+  helpers:
+    submit:
+      create: "登録する"
+      submit: "保存する"
+      update: "更新する"
+    
   activerecord:
     errors:
       messages:
@@ -40,5 +46,15 @@ ja:
         news_posting_auth: お知らせ投稿権限
       profile:
         profile: プロフィール
+      article:
+        title: タイトル
+        content: 内容
+        author: 投稿者
+        deleted_at: 削除日
+        created_at: 登録日
+        updated_at: 更新日
+        
+
+
 
 
