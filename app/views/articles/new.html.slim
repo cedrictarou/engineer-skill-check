@@ -1,5 +1,4 @@
-h1
-  | 記事の新規登録
-.nav.justify-content-end
-  = link_to '一覧', employee_articles_path(@current_user.id) , class: 'btn btn-primary'
-= render partial: "form", locals: { employee: @employee, article: @article}
+.article_page
+  .nav.justify-content-end
+    = link_to '一覧', employee_articles_path(@current_user.id) , class: 'btn btn-primary'
+  = render partial: "form", locals: { employee: @employee, article: @article}

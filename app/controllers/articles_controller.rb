@@ -2,15 +2,18 @@ class ArticlesController < ApplicationController
   before_action :set_employee, only: %i[new edit show update destroy]
 
   def index
+    @page_title = '記事一覧ページ'
     # @employees = Employee.active.order("#{sort_column} #{sort_direction}")
     @articles = Article.includes(:employee).active.order('created_at DESC')
   end
 
   def show
+    @page_title = '記事詳細ページ'
     @article = Article.find(params[:id])
   end
 
   def new
+    @page_title = '新規記事投稿ページ'
     @article = Article.new
   end
 
@@ -24,6 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @page_title = '記事編集ページ'
     @article = Article.find(params[:id])
   end
 

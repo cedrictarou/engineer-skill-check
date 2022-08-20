@@ -1,17 +1,18 @@
-= javascript_pack_tag "header.js"
-#menu
-  ul
-    li
-      = link_to 'お知らせ', employee_articles_path(@current_user.id)
-    li
-      = link_to '社員紹介', employees_path
-  ul
-    li
-      button#dropdown__btn.dropdown__btn
-        = "#{@current_user.last_name} #{@current_user.first_name}"
-#dropdown_menu
-  .right_menu
-    .dropdown_items
-      ul
-        li
-          = link_to 'ログアウト', logout_path, method: :delete
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
+  .container-fluid
+    h1.navbar-brand 
+      = @page_title ? @page_title : '社員交流サイト'
+    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" 
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        li.nav-item
+          = link_to 'お知らせ', employee_articles_path(@current_user.id), class:'nav-link'
+        li.nav-item
+          = link_to '社員紹介', employees_path, class:'nav-link'
+      .mb-2.mb-lg-0.dropdown
+        button.btn.btn-secondary.dropdown-toggle#dropdownMenuButton data-bs-toggle="dropdown" aria-expanded="false"
+          = "#{@current_user.last_name} #{@current_user.first_name}"
+        .dropdown-menu.dropdown-menu-right aria-labelledby="dropdownMenuButton"
+          = link_to 'ログアウト', logout_path, method: :delete, class:'dropdown-item'
+        

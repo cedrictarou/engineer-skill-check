@@ -3,10 +3,12 @@ class EmployeesController < ApplicationController
   before_action :set_form_option, only: %i[new create edit update]
 
   def index
+    @page_title = '社員一覧ページ'
     @employees = Employee.active.order("#{sort_column} #{sort_direction}")
   end
 
   def new
+    @page_title = '社員情報登録ページ'
     @employee = Employee.new
   end
 
@@ -22,7 +24,9 @@ class EmployeesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @page_title = '社員情報編集ページ'
+  end
 
   def update
     # add_params

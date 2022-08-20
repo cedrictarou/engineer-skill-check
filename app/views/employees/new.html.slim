@@ -1,1 +1,5 @@
-= render partial: 'form', locals: { employee: @employee, departments: @departments, offices: @offices }
+.employee_page
+  .nav.justify-content-end
+    = link_to '一覧', employees_path(@current_user.id) , class: 'btn btn-primary'
+
+  = render partial: 'form', locals: { employee: @employee, departments: @departments, offices: @offices }

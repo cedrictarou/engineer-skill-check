@@ -1,15 +1,12 @@
-.row
-  span.label
-    | 社員番号
-  span
-    = employee.number
-.row
-  span.label
-    | 氏名
-  span
-    = "#{employee.last_name} #{employee.first_name}"
-.row
-  span.label
-    | 部署
-  span
-    = employee.department.name
+table.table.table-hover.text-center
+  thead
+    tr
+      th scope="col"  社員番号
+      th scope="col"  氏名
+      th scope="col"  部署
+  tbody
+    tr
+      td = employee.number
+      td = "#{employee.last_name} #{employee.first_name}"
+      td = employee.department.name
+    

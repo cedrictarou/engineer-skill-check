@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   skip_before_action :user_logged_in?
 
   def new
-    # @employee = Employee.new
     redirect_to root_path if logged_in?
   end
 
@@ -43,6 +42,5 @@ class SessionsController < ApplicationController
 
   def employee_params
     params.require(:employees).permit(:account, :password)
-    # params.permit(:account, :password)
   end
 end
