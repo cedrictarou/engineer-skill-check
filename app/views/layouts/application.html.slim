@@ -14,8 +14,8 @@ html
     - if logged_in?
       = render 'layouts/header'
     - if flash[:notice]
-      p.alert.alert-success = notice
+      p.alert.alert-success.mt-3 = notice
     - elsif flash[:alert]
-      p.alert.alert-danger = alert
+      p.alert.alert-dangermt-3 = alert
     .container
       = yield

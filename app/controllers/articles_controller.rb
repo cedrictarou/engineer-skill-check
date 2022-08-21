@@ -31,9 +31,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article = Article.find(params[:id])
-    article.update!(article_params)
-    redirect_to employee_articles_url(set_employee.id), notice: "記事「#{article.title}」が更新されました。"
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to employee_articles_url(set_employee.id), notice: "記事「#{@article.title}」が更新されました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
