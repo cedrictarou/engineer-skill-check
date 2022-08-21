@@ -8,7 +8,7 @@
         th
           = Article.human_attribute_name(:title)
         th
-          = Article.human_attribute_name(:created_at)
+          = sort_order_desc "updated_at", '公開日'
         th
     tbody.align-middle
       - @articles.each do |article|

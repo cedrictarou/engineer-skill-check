@@ -3,8 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     @page_title = '記事一覧ページ'
-    # @employees = Employee.active.order("#{sort_column} #{sort_direction}")
-    @articles = Article.includes(:employee).active.order('created_at DESC')
+    @articles = Article.includes(:employee).order("#{sort_column} #{sort_direction}")
   end
 
   def show
@@ -54,5 +53,13 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :content).merge(employee_id: set_employee.id)
+  end
+
+  def sort_column
+    params[:sort] || 'updated_at'
+  end
+
+  def sort_direction
+    params[:direction] || 'desc'
   end
 end
