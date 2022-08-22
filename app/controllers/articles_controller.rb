@@ -1,9 +1,10 @@
 class ArticlesController < ApplicationController
-  before_action :set_employee, only: %i[new edit show update destroy]
+  # before_action :set_employee, only: %i[new edit show update destroy]
+  before_action :set_employee, except: %i[destroy]
 
   def index
     @page_title = '記事一覧ページ'
-    @articles = Article.includes(:employee).order("#{sort_column} #{sort_direction}")
+    @articles = Article.includes(:employee).active.order("#{sort_column} #{sort_direction}")
   end
 
   def show
@@ -45,13 +46,13 @@ class ArticlesController < ApplicationController
       now = Time.now
       @article.update_column(:deleted_at, now)
     end
-    redirect_to employee_articles_path(params[:id]), notice: "「#{@article.title}」を削除しました。"
+    redirect_to employee_articles_path, notice: "「#{@article.title}」を削除しました。"
   end
 
   private
 
   def set_employee
-    @employee = Employee.find(@current_user.id)
+    @employee = Employee.find(params[:employee_id])
   end
 
   def article_params

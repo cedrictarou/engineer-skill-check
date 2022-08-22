@@ -1,7 +1,7 @@
 .article_page
   - if current_user.employee_info_manage_auth
     .nav.justify-content-end
-      = link_to '新規投稿', new_employee_article_path, class: 'btn btn-primary'
+      = link_to '新規投稿', new_employee_article_path(@employee), class: 'btn btn-primary'
   table.table.table-hover
     thead.thead-default
       tr
@@ -14,9 +14,9 @@
       - @articles.each do |article|
         tr
           td
-            = link_to article.title, article
+            = link_to article.title, employee_article_path(@employee, article)
           td
             = article.created_at
           td
-            = link_to '編集', edit_article_path(article), class:'btn btn-primary me-3'
-            = link_to '削除', article, method: :delete, data:{confirm:"投稿を削除してもよろしいですか"},class:'btn btn-danger'
+            = link_to '編集', edit_employee_article_path(@employee, article), class:'btn btn-primary me-3'
+            = link_to '削除', employee_article_path(id: article), method: :delete, data:{confirm:"投稿を削除してもよろしいですか"},class:'btn btn-danger'

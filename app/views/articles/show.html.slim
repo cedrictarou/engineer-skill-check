@@ -1,6 +1,6 @@
 .article_page
   .nav.justify-content-end
-    = link_to '一覧', employee_articles_path(@current_user.id), class: 'btn btn-primary'
+    = link_to '一覧', employee_articles_path(@employee), class: 'btn btn-primary'
   table.table.table-hover
     tbody
       tr
@@ -28,5 +28,5 @@
           = Article.human_attribute_name(:updated_at)
         td
           = @article.updated_at
-  = link_to '編集', edit_article_path(@article), class:'btn btn-primary me-3'
-  = link_to '削除', @article, method: :delete, data:{confirm:"投稿を削除してもよろしいですか"},class:'btn btn-danger'
+  = link_to '編集', edit_employee_article_path, class:'btn btn-primary me-3'
+  / = link_to '削除', employee_article_path, method: :delete, data:{confirm:"投稿を削除してもよろしいですか"},class:'btn btn-danger'

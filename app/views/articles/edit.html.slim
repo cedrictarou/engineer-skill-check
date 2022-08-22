@@ -1,5 +1,5 @@
 
 .article_page
   .nav.justify-content-end
-    = link_to '一覧', employee_articles_path(@current_user.id) , class: 'btn btn-primary'
-  = render partial: "form", locals: { article: @article}
+    = link_to '一覧', employee_articles_path(@employee) , class: 'btn btn-primary'
+  = render partial: "form", locals: { employee: @employee, article: @article}

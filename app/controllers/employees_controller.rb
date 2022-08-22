@@ -15,8 +15,6 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
 
-    # add_params
-
     if @employee.save
       redirect_to employees_url, notice: "社員「#{@employee.last_name} #{@employee.first_name}」を登録しました。"
     else
@@ -29,8 +27,6 @@ class EmployeesController < ApplicationController
   end
 
   def update
-    # add_params
-
     if @employee.update(employee_params)
       redirect_to employees_url, notice: "社員「#{@employee.last_name} #{@employee.first_name}」を更新しました。"
     else
@@ -68,23 +64,13 @@ class EmployeesController < ApplicationController
   end
 
   def set_employee
-    @employee = Employee.find(params['id'])
+    @employee = Employee.find(params[:id])
   end
 
   def set_form_option
     @departments = Department.all
     @offices = Office.all
   end
-
-  # 現在、メールアドレスと入社日は入力できないため、ここで追加しています。
-  # def add_params
-  #   unless @employee.email
-  #     @employee.email = 'sample@example.com'
-  #   end
-  #   unless @employee.date_of_joining
-  #     @employee.date_of_joining = Date.today
-  #   end
-  # end
 
   def sort_column
     params[:sort] || 'number'

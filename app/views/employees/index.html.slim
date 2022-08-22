@@ -20,10 +20,13 @@
       - @employees.each do |employee|
         tr
           - if employee.profiles.active.present?
+            / プロフィールがある社員の場合
             - if employee == current_user
+              / 社員がログインしているユーザーと同じ場合→編集ページヘ
               th
                 = link_to employee.number, edit_employee_profile_path(employee, employee.profiles.active.first) 
             - else
+              / 社員がログインしているユーザート違う場合→showのみ
               th
                 = link_to employee.number, employee_profile_path(employee, employee.profiles.active.first)
           - else
