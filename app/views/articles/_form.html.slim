@@ -5,9 +5,9 @@
         = message
 = form_with model: [employee, article], local: true do |f|
   .mb-3.form-group
-    = f.label :title, class:'form-label'
+    = f.label :title, class: 'form-label'
     = f.text_field :title, placeholder: "タイトルを入力してください。",class:'form-control'
   .mb-3.form-group
-    = f.label :content, class:'form-label'
+    = f.label :content, class: 'form-label'
     = f.text_area :content, placeholder: "内容を入力してください。", class:'form-control'
-  = f.submit nil, class:'btn btn-primary'
+  = f.submit nil, class: 'btn btn-primary'

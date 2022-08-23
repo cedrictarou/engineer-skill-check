@@ -6,8 +6,6 @@
 
 = render partial: 'employee_info', locals: { employee: @employee }
 
-/ - model = profile.new_record? ? [employee, profile] : profile
-
 = form_with model: [employee, profile], local: true do |f|
   .form_group
     = f.label :profile, class: 'form-label'

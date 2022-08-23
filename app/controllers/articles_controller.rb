@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
-  # before_action :set_employee, only: %i[new edit show update destroy]
   before_action :set_employee, except: %i[destroy]
 
   def index
     @page_title = '記事一覧ページ'
-    @articles = Article.includes(:employee).active.order("#{sort_column} #{sort_direction}")
+    @articles = Article.includes(:employee).active.order("#{sort_column} #{sort_direction}").page(params[:page]).per(10)
   end
 
   def show

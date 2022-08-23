@@ -29,7 +29,12 @@ gem 'html2slim'
 gem 'hirb', '~> 0.7.3'
 # hirbの文字列を補正する
 gem 'hirb-unicode-steakknife', '~> 0.0.9'
-
+# https://github.com/sds/slim-lint
+gem 'slim_lint', require: false
+# ページネーションに使うgem https://github.com/kaminari/kaminari
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
+# bootstrap5でページネーションのデザインを変える
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

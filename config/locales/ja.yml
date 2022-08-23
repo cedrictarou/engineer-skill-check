@@ -1,8 +1,13 @@
 ja:
+  views:
+    pagination:
+      previous: "« 前ページ"
+      next: "次ページ »"
+      truncate: "..."
   time:
-      formats:
-        default: "%Y/%m/%d %H:%M:%S"
-        short: "%y/%m/%d/"
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%y/%m/%d/"
   helpers:
     submit:
       create: "登録する"
@@ -53,6 +58,7 @@ ja:
         deleted_at: 削除日
         created_at: 登録日
         updated_at: 更新日
+    
         
 
 
