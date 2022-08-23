@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ArticlesController < ApplicationController
   before_action :set_employee, except: %i[destroy]
 
