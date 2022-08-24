@@ -1,14 +1,11 @@
-.profile_space
-  .nav.justify-content-end
-    = link_to '一覧に戻る', employees_path, class: 'btn btn-primary'
-  = render partial: 'employee_info', locals: { employee: @employee }
+= render partial: 'employee_info', locals: { employee: @employee }
 
-  .row
-    span.label
-      | プロフィール
-    span.profile_value
-      - if current_user == @employee
-        p
-          = link_to 'プロフィールを作成', new_employee_profile_path(@employee)
-      - else
-        |  （プロフィールがありません） 
+.row
+  span.label
+    | プロフィール
+  span.profile_value
+    - if current_user == @employee
+      p
+        = link_to 'プロフィールを作成', new_employee_profile_path(@employee)
+    - else
+      |  （プロフィールがありません） 
