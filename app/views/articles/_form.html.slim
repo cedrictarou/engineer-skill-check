@@ -3,6 +3,12 @@
     - article.errors.full_messages.each do |message|
       li.list-group-item.list-group-item-danger
         = message
+
+.nav.justify-content-end
+  = link_to employee_articles_path(@current_user.id) , class: 'btn btn-outline-primary' do 
+    i.fa-solid.fa-list
+  end
+
 = form_with model: [employee, article], local: true do |f|
   .mb-3.form-group
     = f.label :title, class: 'form-label'

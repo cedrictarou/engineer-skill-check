@@ -1,5 +1,7 @@
   .nav.justify-content-end
-      = link_to '一覧', employees_path(employee, format: :html) , class: 'btn btn-primary'
+      = link_to employees_path(employee, format: :html) , class: 'btn btn-outline-primary' do 
+        i.fa-solid.fa-list
+      end
   / エラー表示
   - if employee.errors.present?
   ul.list-group

@@ -1,6 +1,8 @@
 - if current_user.employee_info_manage_auth
   .nav.d-flex.justify-content-end
-    = link_to '新規追加', new_employee_path, class: 'btn btn-primary'
+    = link_to new_employee_path, class: 'btn btn-outline-primary' do 
+      i.fa-solid.fa-plus
+    end
 table.table.table-hover
   thead.thead-default.text-center
     tr
@@ -33,7 +35,13 @@ table.table.table-hover
           = employee.department.name
         - if current_user.employee_info_manage_auth
           th
-            = link_to '編集', edit_employee_path(employee), class: 'btn btn-primary me-3'
-            = link_to '削除', employee, method: :delete, data: { confirm: "社員「#{employee.first_name} #{employee.last_name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+            
+            = link_to edit_employee_path(employee), class: 'btn btn-primary me-3' do
+              i.fa-solid.fa-pen
+            end
+            = link_to employee, method: :delete, data: { confirm: "社員「#{employee.first_name} #{employee.last_name}」を削除します。よろしいですか？" }, class: 'btn btn-danger' do 
+              i.fa-solid.fa-trash
+            end
+      
 .mt-5.d-flex.justify-content-center 
   = link_to "エクスポート", employees_path(format: :csv), class: "btn btn-secondary"

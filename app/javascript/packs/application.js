@@ -10,6 +10,8 @@ import 'jquery';
 
 // bootstrap5用のコード
 import 'bootstrap';
+// fontawesome用のコード
+import '@fortawesome/fontawesome-free/js/all';
 import '../stylesheets/application.scss';
 
 Rails.start();
