@@ -16,8 +16,9 @@ table.table.table-hover
           = link_to article.title, employee_article_path(@employee, article)
         td
           = article.created_at
-        td
-          = link_to '編集', edit_employee_article_path(@employee, article), class: 'btn btn-primary me-3'
-          = link_to '削除', employee_article_path(id: article), method: :delete, data: {confirm:'投稿を削除してもよろしいですか'},class: 'btn btn-danger'
+        - if article.employee_id == current_user.id
+          td
+            = link_to '編集', edit_employee_article_path(@employee, article), class: 'btn btn-primary me-3'
+            = link_to '削除', employee_article_path(id: article), method: :delete, data: {confirm:'投稿を削除してもよろしいですか'},class: 'btn btn-danger'
 
 = paginate @articles, theme: 'bootstrap-5' 

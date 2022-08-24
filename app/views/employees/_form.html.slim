@@ -1,10 +1,13 @@
   .nav.justify-content-end
       = link_to '一覧', employees_path(employee, format: :html) , class: 'btn btn-primary'
+  / エラー表示
   - if employee.errors.present?
   ul.list-group
     - employee.errors.full_messages.each do |message|
       li.list-group-item.list-group-item-danger
         = message
+        
+  / 入力パート
   = form_with model: employee, local: true do |f|
     .form-group.mb-2
       = f.label :number, class:'form-label'

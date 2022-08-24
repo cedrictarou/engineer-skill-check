@@ -16,7 +16,7 @@ table.table.table-hover
       th
         = Article.human_attribute_name(:content)
       td
-        = @article.created_at
+        = @article.content
     tr
       th
         = Article.human_attribute_name(:created_at)
@@ -27,5 +27,7 @@ table.table.table-hover
         = Article.human_attribute_name(:updated_at)
       td
         = @article.updated_at
-= link_to '編集', edit_employee_article_path, class:'btn btn-primary me-3'
-= link_to '削除', employee_article_path, method: :delete, data:{confirm:"投稿を削除してもよろしいですか"},class:'btn btn-danger'
+
+- if @article.employee_id == current_user.id
+  = link_to '編集', edit_employee_article_path, class:'btn btn-primary me-3'
+  = link_to '削除', employee_article_path, method: :delete, data:{confirm:"投稿を削除してもよろしいですか"},class:'btn btn-danger'
