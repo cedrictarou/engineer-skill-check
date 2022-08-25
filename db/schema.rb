@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_14_022031) do
+ActiveRecord::Schema.define(version: 2022_08_25_114714) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2022_08_14_022031) do
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "account", null: false
-    t.string "password", null: false
+    t.string "password_digest", null: false
     t.string "email", null: false
     t.date "date_of_joining", null: false
     t.boolean "employee_info_manage_auth", default: false, null: false

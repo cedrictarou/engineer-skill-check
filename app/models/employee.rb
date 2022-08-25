@@ -1,4 +1,6 @@
 class Employee < ApplicationRecord
+  has_secure_password
+
   belongs_to :office
   belongs_to :department
   has_many :profiles

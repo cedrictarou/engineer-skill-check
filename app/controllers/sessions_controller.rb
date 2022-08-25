@@ -7,40 +7,40 @@ class SessionsController < ApplicationController
 
   def create
     if check_params
-      employee = Employee.find_by(account: employee_params[:account], password: employee_params[:password])
-      if employee
+      employee = Employee.find_by(account: session_params[:account])
+
+      if employee&.authenticate(session_params[:password])
         login(employee)
-        redirect_to root_path
+        redirect_to root_path, notice: 'ログインしました。'
       else
         flash.now[:alert] = 'アカウントもしくはパスワードが一致しません。'
-        render 'new'
+        render :new
       end
     else
-      render 'new'
+      render :new
     end
   end
 
   def destroy
-    session.delete(:user_id)
-    @current_user = nil
-    redirect_to login_path
+    reset_session
+    redirect_to root_url, notice: 'ログアウトしました。'
   end
 
   private
 
   def check_params
-    if employee_params[:account].blank?
+    if session_params[:account].blank?
       flash.now[:alert] = 'アカウントが入力されていません。'
       return false
     end
-    if employee_params[:password].blank?
+    if session_params[:password].blank?
       flash.now[:alert] = 'パスワードが入力されていません。'
       return false
     end
     true
   end
 
-  def employee_params
-    params.require(:employees).permit(:account, :password)
+  def session_params
+    params.require(:session).permit(:account, :password)
   end
 end

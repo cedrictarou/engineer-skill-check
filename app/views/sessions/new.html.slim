@@ -1,12 +1,24 @@
 
+/ .session
+/   = form_for(:employees, url: login_path) do |f|
+/     h1.h3.mb-3.fw-normal.text-center サインインをしてください
+/     .form-floating
+/       = f.text_field :account, placeholder:'アカウント', class: 'form-control', id:'floatingInput'
+/       = f.label 'アカウント', class: 'form-label', for: "floatingInput"
+/     .form-floating
+/       = f.password_field :password, placeholder:'パスワード', class: 'form-control',id: "floatingPassword"
+/       = f.label 'パスワード', class: 'form-label', for: "floatingPassword"
+    
+/     = f.submit 'ログイン', class:'w-100 btn btn-lg btn-primary mt-3'
+
 .session
-  = form_for(:employees, url: login_path) do |f|
+  = form_with scope: :session, local: true do |f|
     h1.h3.mb-3.fw-normal.text-center サインインをしてください
     .form-floating
-      = f.text_field :account, placeholder:'アカウント', class: 'form-control', id:'floatingInput'
+      = f.text_field :account, placeholder:'アカウント', class: 'form-control', id:'floatingInput', id: 'session_account'
       = f.label 'アカウント', class: 'form-label', for: "floatingInput"
-    .form-floating
-      = f.password_field :password, placeholder:'パスワード', class: 'form-control',id: "floatingPassword"
+    .form-floating.mt-3
+      = f.password_field :password, placeholder:'パスワード', class: 'form-control', id: "floatingPassword", id: 'session_password'
       = f.label 'パスワード', class: 'form-label', for: "floatingPassword"
     
-    = f.submit 'ログイン', class:'w-100 btn btn-lg btn-primary mt-3'
+    = f.submit 'ログイン', class: 'btn btn-primary mt-3'

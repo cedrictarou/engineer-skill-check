@@ -29,6 +29,9 @@
       = f.label :password, class:'form-label'
       = f.password_field :password, class:'form-control'
     .form-group.mb-2
+      = f.label :password_confirmation, class:'form-label'
+      = f.password_field :password_confirmation, class:'form-control'
+    .form-group.mb-2
       = f.label :department_id, class:'form-label'
       = f.collection_select(:department_id, @departments, :id, :name, {prompt: false}, {class: "form-control"} )
     .form-group.mb-2
