@@ -17,4 +17,18 @@ class Employee < ApplicationRecord
   scope :active, lambda {
     where(deleted_at: nil)
   }
+
+  def self.csv_attributes
+    %w[id department_id office_id number last_name first_name account password_digest email date_of_joining employee_info_manage_auth
+       deleted_at created_at updated_at news_posting_auth]
+  end
+
+  def self.generate_csv
+    CSV.generate(headers: true) do |csv|
+      csv << csv_attributes
+      all.each do |employee|
+        csv << csv_attributes.map { |attr| employee.send(attr) }
+      end
+    end
+  end
 end

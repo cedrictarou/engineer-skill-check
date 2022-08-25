@@ -7,9 +7,7 @@ class EmployeesController < ApplicationController
     @employees = Employee.active.order("#{sort_column} #{sort_direction}")
     respond_to do |format|
       format.html
-      format.csv do
-        send_data render_to_string, filename: '社員名簿.csv', type: :csv
-      end
+      format.csv { send_data @employees.generate_csv, filename: "employees-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" }
     end
   end
 
