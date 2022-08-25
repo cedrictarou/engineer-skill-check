@@ -7,11 +7,13 @@ table.table.table-hover
   thead.thead-default.text-center
     tr
       th
-        = sort_order_asc "number", "社員番号"
+        = sort_order_asc "number", "社員番号　"
+        i.fa-solid.fa-sort
       th
         | 氏名
       th
-        = sort_order_asc "department_id", "所属"
+        = sort_order_asc "department_id", "所属　"
+        i.fa-solid.fa-sort
       th
   tbody.align-middle.text-center
     - @employees.each do |employee|

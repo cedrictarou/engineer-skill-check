@@ -3,13 +3,15 @@
     = link_to new_employee_article_path(@employee), class: 'btn btn-outline-primary' do 
       i.fa-solid.fa-plus
     end
+
+
 table.table.table-hover
   thead.thead-default
     tr
       th
         = Article.human_attribute_name(:title)
       th
-        = sort_order_desc 'updated_at', '公開日'
+        = sort_order_desc 'updated_at', '公開日 '
         i.fa-solid.fa-sort
       th
   tbody.align-middle
@@ -18,7 +20,7 @@ table.table.table-hover
         td
           = link_to article.title, employee_article_path(@employee, article)
         td
-          = article.created_at
+          = l article.created_at
           td
             - if article.employee_id == current_user.id
               = link_to edit_employee_article_path(@employee, article), class: 'btn btn-primary me-3' do 

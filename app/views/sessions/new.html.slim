@@ -1,5 +1,5 @@
 
-.session.form-signin.w-100.m-auto
+.session
   = form_for(:employees, url: login_path) do |f|
     h1.h3.mb-3.fw-normal.text-center サインインをしてください
     .form-floating
@@ -8,8 +8,5 @@
     .form-floating
       = f.password_field :password, placeholder:'パスワード', class: 'form-control',id: "floatingPassword"
       = f.label 'パスワード', class: 'form-label', for: "floatingPassword"
-    - if flash[:alert]
-      .list-group
-        p.list-group-item.list-group-item-danger
-          = flash[:alert]
+    
     = f.submit 'ログイン', class:'w-100 btn btn-lg btn-primary mt-3'

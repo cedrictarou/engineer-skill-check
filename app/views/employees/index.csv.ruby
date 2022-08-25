@@ -1,6 +1,6 @@
 require 'csv'
 
-CSV.generate do |csv|
+CSV.generate do |csv| # rubocop:disable Metrics/BlockLength
   column_names = %w[id
                     department_id
                     office_id

@@ -6,17 +6,17 @@ html
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all'
     - # bootstrap5のスタイルシートを読み込む
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application'
+    = stylesheet_link_tag 'application', media: 'all'
   body
     - if logged_in?
       = render 'layouts/header'
     - if flash[:notice]
       p.alert.alert-success.mt-3 = notice
     - elsif flash[:alert]
-      p.alert.alert-dangermt-3 = alert
+      p.alert.alert-danger.mt-3 = alert
     .container
       section
         = yield
